@@ -2,6 +2,7 @@ package com.hendisantika.controller;
 
 import com.hendisantika.model.User;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
@@ -34,6 +35,7 @@ import java.util.Map;
  */
 @RestController
 @RequiredArgsConstructor
+@Slf4j
 public class UserController {
     private static final String TEMPLATE_NAME = "registration";
     private static final String SPRING_LOGO_IMAGE = "templates/images/spring.png";
@@ -82,6 +84,7 @@ public class UserController {
 
         Map<String, String> body = new HashMap<>();
         body.put("message", "User created successfully.");
+        log.info("Email already sent via SMTP! Please check your inbox for order confirmation!");
 
         return new ResponseEntity<>(body, HttpStatus.OK);
     }
