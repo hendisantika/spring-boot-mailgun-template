@@ -17,3 +17,13 @@ curl --location --request POST 'localhost:8080/register' \
     "email": "naruto@yopmail.com"
 }'
 ```
+
+### Image Screenshot
+
+Send Email
+
+![Send Email](img/send-email.png "Send Email")
+
+Email Recieved
+
+![Email Recieved](img/email.png "Email Recieved")
